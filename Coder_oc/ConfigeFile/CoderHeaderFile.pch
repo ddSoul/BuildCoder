@@ -1,0 +1,30 @@
+//
+//  CoderHeaderFile.pch
+//  Coder_oc
+//
+//  Created by ddSoul on 17/1/3.
+//  Copyright © 2017年 dxl. All rights reserved.
+//
+
+#ifndef CoderHeaderFile_pch
+#define CoderHeaderFile_pch
+
+#import "ThirdKey.h"
+#import "Screen.h"
+#import "ProgressHUD.h"
+#import "Masonry.h"
+#import "UIImage+Color.h"
+#import "UITableView+FDTemplateLayoutCell.h"
+#import "AFNetworking.h"
+#import "AXHttpTool.h"
+#import "MJExtension.h"
+#import "UIImageView+WebCache.h"
+
+#import <BmobSDK/Bmob.h>
+
+#define KmineFilePath [NSHomeDirectory() stringByAppendingPathComponent:@"mine.txt"]
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* CoderHeaderFile_pch */
