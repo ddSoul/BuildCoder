@@ -30,12 +30,17 @@
 - (void)initUI
 {
     self.title = @"个人中心";
+    self.navigationController.navigationBar.hidden = YES;
     
-    UITableView *mineInfoTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight)];
-    mineInfoTableView.delegate = self;
-    mineInfoTableView.dataSource = self;
-    [mineInfoTableView registerNib:[UINib nibWithNibName:@"MineInfoCell" bundle:nil] forCellReuseIdentifier:KCellID];
-    [self.view addSubview:mineInfoTableView];
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 100)];
+    view.backgroundColor = [UIColor redColor];
+    [self.view addSubview:view];
+    
+//    UITableView *mineInfoTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight)];
+//    mineInfoTableView.delegate = self;
+//    mineInfoTableView.dataSource = self;
+//    [mineInfoTableView registerNib:[UINib nibWithNibName:@"MineInfoCell" bundle:nil] forCellReuseIdentifier:KCellID];
+//    [self.view addSubview:mineInfoTableView];
     
 }
 
@@ -50,35 +55,36 @@
     return 5;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    return 100;
-}
+//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+//{
+//    return 100;
+//}
 
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    self.haderViews = [[MineHeaderView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 100)];
-    return self.haderViews;
-}
+//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+//{
+//    self.haderViews = [[MineHeaderView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 200)];
+//    return self.haderViews;
+//}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     MineInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:KCellID
                                                     forIndexPath:indexPath];
+    cell.backgroundColor = [UIColor redColor];
     return cell;
 }
 //下拉放大headerView
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    
-    CGFloat width = [UIScreen mainScreen].bounds.size.width;
-    CGFloat yOffset = scrollView.contentOffset.y;
-    
-    if (yOffset < -64) {
-        CGFloat totalOffset = 100 + ABS(yOffset);
-        CGFloat f = totalOffset / 100;
-        self.haderViews.avtorImageView_b.frame = CGRectMake(- (width *f-width) / 2, yOffset+64, width * f, totalOffset-64);
-    }
-}
+//- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+//    
+//    CGFloat width = [UIScreen mainScreen].bounds.size.width;
+//    CGFloat yOffset = scrollView.contentOffset.y;
+//    
+//    if (yOffset < -64) {
+//        CGFloat totalOffset = 200 + ABS(yOffset);
+//        CGFloat f = totalOffset / 200;
+//        self.haderViews.avtorImageView_b.frame = CGRectMake(- (width *f-width) / 2, yOffset+64, width * f, totalOffset-64);
+//    }
+//}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

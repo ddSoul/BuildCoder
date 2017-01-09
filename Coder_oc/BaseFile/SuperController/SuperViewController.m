@@ -9,8 +9,7 @@
 #import "SuperViewController.h"
 #import "UITextField+tool.h"
 
-@interface SuperViewController ()<UITextFieldDelegate>
-
+@interface SuperViewController ()
 @end
 
 @implementation SuperViewController
@@ -30,21 +29,16 @@
     home_logo.image = [UIImage imageNamed:@"logo"];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:home_logo];
     
-    
-    UITextField *home_search = [[UITextField alloc] initWithFrame:CGRectMake(120, 20, 230, 34)];
-    home_search.backgroundColor = [UIColor whiteColor];
-    home_search.delegate = self;
-    home_search.layer.cornerRadius = 5.0f;
-    home_search.leftDistance = 40.0f;
-    [home_search addleftImageView];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:home_search];
+    UIButton *rightItenBoderButton = [[UIButton alloc] initWithFrame:CGRectMake(120, 20, 230, 34)];
+    rightItenBoderButton.backgroundColor = [UIColor whiteColor];
+    rightItenBoderButton.layer.cornerRadius = 5;
+    [rightItenBoderButton addTarget:self action:@selector(toSearchVc) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightItenBoderButton];
 
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-    [textField resignFirstResponder];
-    return YES;
+- (void)toSearchVc{
+    NSLog(@"");
 }
 
 - (void)didReceiveMemoryWarning {

@@ -27,6 +27,8 @@
  */
 - (void)createControls
 {
+    self.backgroundColor = [UIColor colorWithHexString:@"eeeeee"];
+    
     UIScrollView *lablesView = [[UIScrollView alloc] init];
     lablesView.frame = CGRectMake(0, 0, ScreenWidth, KHomeLabelsHeight);
     lablesView.contentSize = CGSizeMake(ScreenWidth * 2, 0);
@@ -34,11 +36,16 @@
     [self addSubview:lablesView];
     
     for (int i = 0; i<10; i++) {
-        UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(10 + i*100, 5, 80, 40)];
-        btn.layer.cornerRadius = 5;
-        btn.layer.borderColor = [UIColor redColor].CGColor;
-        btn.layer.borderWidth = 1;
+        UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(10 + i*80, 5, 60, 40)];
+        [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [btn setTitle:@"推荐" forState:UIControlStateNormal];
+        btn.titleLabel.font = [UIFont systemFontOfSize:17];
+        btn.titleLabel.textAlignment = NSTextAlignmentCenter;
         [lablesView addSubview:btn];
+        
+        if (i == 0) {
+            [btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+        }
     }
 }
 

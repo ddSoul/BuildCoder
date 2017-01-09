@@ -7,6 +7,7 @@
 //
 
 #import "CoderHomeViewController.h"
+#import "CoderSearchViewController.h"
 #import "HomeLabelViews.h"
 #import "BigImageCell.h"
 #import "SmallImageCell.h"
@@ -144,6 +145,16 @@
     cell.model = newsModel;
     return cell;
 }
+
+- (void)toSearchVc
+{
+    CoderSearchViewController *searchVc = [[CoderSearchViewController alloc] init];
+    searchVc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:searchVc animated:YES];
+}
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

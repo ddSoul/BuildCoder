@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B3FDDE11E2328A200641EED /* VedioCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B3FDDDF1E2328A200641EED /* VedioCell.m */; };
+		7B3FDDE21E2328A200641EED /* VedioCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B3FDDE01E2328A200641EED /* VedioCell.xib */; };
+		7B3FDDEE1E23371100641EED /* FastForwardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B3FDDE71E23371100641EED /* FastForwardView.m */; };
+		7B3FDDEF1E23371100641EED /* FastForwardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B3FDDE81E23371100641EED /* FastForwardView.xib */; };
+		7B3FDDF01E23371100641EED /* WMLightView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B3FDDEA1E23371100641EED /* WMLightView.m */; };
+		7B3FDDF11E23371100641EED /* WMPlayer.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7B3FDDEB1E23371100641EED /* WMPlayer.bundle */; };
+		7B3FDDF21E23371100641EED /* WMPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B3FDDED1E23371100641EED /* WMPlayer.m */; };
+		7B3FDDF51E233F6500641EED /* VedioNews.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B3FDDF41E233F6500641EED /* VedioNews.m */; };
 		7B43664E1E1C880600158F3F /* RootTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B43664D1E1C880600158F3F /* RootTabBarController.m */; };
 		7B4366521E1C8CA000158F3F /* Bmob_iOS_SDK更新历史.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7B4366501E1C8CA000158F3F /* Bmob_iOS_SDK更新历史.txt */; };
 		7B4366531E1C8CA000158F3F /* BmobSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B4366511E1C8CA000158F3F /* BmobSDK.framework */; };
@@ -46,6 +54,10 @@
 		7B602DE41E1F84F10041BF40 /* newsData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7B602DE31E1F84F10041BF40 /* newsData.plist */; };
 		7B602DE81E1F87260041BF40 /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B602DE71E1F87260041BF40 /* News.m */; };
 		7B602DEB1E1F87540041BF40 /* FootModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B602DEA1E1F87540041BF40 /* FootModel.m */; };
+		7B602DEE1E1FA2100041BF40 /* UIColor+HexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B602DED1E1FA2100041BF40 /* UIColor+HexColor.m */; };
+		7B602DF11E1FA3E50041BF40 /* CoderVidieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B602DF01E1FA3E50041BF40 /* CoderVidieViewController.m */; };
+		7B602DF41E1FA4200041BF40 /* CoderNewCareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B602DF31E1FA4200041BF40 /* CoderNewCareViewController.m */; };
+		7B602DF71E1FA4D00041BF40 /* CoderSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B602DF61E1FA4D00041BF40 /* CoderSearchViewController.m */; };
 		7BF3EE821E1BA79E00514019 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF3EE811E1BA79E00514019 /* main.m */; };
 		7BF3EE8D1E1BA79E00514019 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BF3EE8C1E1BA79E00514019 /* Assets.xcassets */; };
 		7BF3EE9B1E1BA79F00514019 /* Coder_ocTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF3EE9A1E1BA79F00514019 /* Coder_ocTests.m */; };
@@ -161,6 +173,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B3FDDDE1E2328A200641EED /* VedioCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VedioCell.h; sourceTree = "<group>"; };
+		7B3FDDDF1E2328A200641EED /* VedioCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VedioCell.m; sourceTree = "<group>"; };
+		7B3FDDE01E2328A200641EED /* VedioCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VedioCell.xib; sourceTree = "<group>"; };
+		7B3FDDE61E23371100641EED /* FastForwardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FastForwardView.h; sourceTree = "<group>"; };
+		7B3FDDE71E23371100641EED /* FastForwardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FastForwardView.m; sourceTree = "<group>"; };
+		7B3FDDE81E23371100641EED /* FastForwardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FastForwardView.xib; sourceTree = "<group>"; };
+		7B3FDDE91E23371100641EED /* WMLightView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMLightView.h; sourceTree = "<group>"; };
+		7B3FDDEA1E23371100641EED /* WMLightView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMLightView.m; sourceTree = "<group>"; };
+		7B3FDDEB1E23371100641EED /* WMPlayer.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = WMPlayer.bundle; sourceTree = "<group>"; };
+		7B3FDDEC1E23371100641EED /* WMPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMPlayer.h; sourceTree = "<group>"; };
+		7B3FDDED1E23371100641EED /* WMPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMPlayer.m; sourceTree = "<group>"; };
+		7B3FDDF31E233F6500641EED /* VedioNews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VedioNews.h; sourceTree = "<group>"; };
+		7B3FDDF41E233F6500641EED /* VedioNews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VedioNews.m; sourceTree = "<group>"; };
 		7B43664C1E1C880600158F3F /* RootTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootTabBarController.h; sourceTree = "<group>"; };
 		7B43664D1E1C880600158F3F /* RootTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootTabBarController.m; sourceTree = "<group>"; };
 		7B4366501E1C8CA000158F3F /* Bmob_iOS_SDK更新历史.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Bmob_iOS_SDK更新历史.txt"; sourceTree = "<group>"; };
@@ -225,6 +250,14 @@
 		7B602DE71E1F87260041BF40 /* News.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = News.m; sourceTree = "<group>"; };
 		7B602DE91E1F87540041BF40 /* FootModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FootModel.h; sourceTree = "<group>"; };
 		7B602DEA1E1F87540041BF40 /* FootModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FootModel.m; sourceTree = "<group>"; };
+		7B602DEC1E1FA2100041BF40 /* UIColor+HexColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexColor.h"; sourceTree = "<group>"; };
+		7B602DED1E1FA2100041BF40 /* UIColor+HexColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexColor.m"; sourceTree = "<group>"; };
+		7B602DEF1E1FA3E50041BF40 /* CoderVidieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoderVidieViewController.h; sourceTree = "<group>"; };
+		7B602DF01E1FA3E50041BF40 /* CoderVidieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoderVidieViewController.m; sourceTree = "<group>"; };
+		7B602DF21E1FA4200041BF40 /* CoderNewCareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoderNewCareViewController.h; sourceTree = "<group>"; };
+		7B602DF31E1FA4200041BF40 /* CoderNewCareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoderNewCareViewController.m; sourceTree = "<group>"; };
+		7B602DF51E1FA4D00041BF40 /* CoderSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoderSearchViewController.h; sourceTree = "<group>"; };
+		7B602DF61E1FA4D00041BF40 /* CoderSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoderSearchViewController.m; sourceTree = "<group>"; };
 		7BF3EE7D1E1BA79E00514019 /* Coder_oc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coder_oc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BF3EE811E1BA79E00514019 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7BF3EE8C1E1BA79E00514019 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -456,6 +489,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B3FDDE41E23371100641EED /* WMPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				7B3FDDE51E23371100641EED /* View */,
+				7B3FDDEB1E23371100641EED /* WMPlayer.bundle */,
+				7B3FDDEC1E23371100641EED /* WMPlayer.h */,
+				7B3FDDED1E23371100641EED /* WMPlayer.m */,
+			);
+			path = WMPlayer;
+			sourceTree = "<group>";
+		};
+		7B3FDDE51E23371100641EED /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7B3FDDE61E23371100641EED /* FastForwardView.h */,
+				7B3FDDE71E23371100641EED /* FastForwardView.m */,
+				7B3FDDE81E23371100641EED /* FastForwardView.xib */,
+				7B3FDDE91E23371100641EED /* WMLightView.h */,
+				7B3FDDEA1E23371100641EED /* WMLightView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		7B43664F1E1C8CA000158F3F /* Bmob_SDK_iOS_v2.0.1 */ = {
 			isa = PBXGroup;
 			children = (
@@ -537,6 +593,8 @@
 		7B602DCD1E1F82F50041BF40 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				7B602DEF1E1FA3E50041BF40 /* CoderVidieViewController.h */,
+				7B602DF01E1FA3E50041BF40 /* CoderVidieViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -544,6 +602,9 @@
 		7B602DCE1E1F82F50041BF40 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7B3FDDDE1E2328A200641EED /* VedioCell.h */,
+				7B3FDDDF1E2328A200641EED /* VedioCell.m */,
+				7B3FDDE01E2328A200641EED /* VedioCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -562,6 +623,8 @@
 		7B602DD01E1F83E90041BF40 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7B3FDDF31E233F6500641EED /* VedioNews.h */,
+				7B3FDDF41E233F6500641EED /* VedioNews.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -576,6 +639,8 @@
 		7B602DD21E1F83E90041BF40 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				7B602DF21E1FA4200041BF40 /* CoderNewCareViewController.h */,
+				7B602DF31E1FA4200041BF40 /* CoderNewCareViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -698,6 +763,7 @@
 		7BF3EEB31E1BAAD200514019 /* ThirdLib */ = {
 			isa = PBXGroup;
 			children = (
+				7B3FDDE41E23371100641EED /* WMPlayer */,
 				7B602D931E1F43A30041BF40 /* xl_Nav */,
 				7B43664F1E1C8CA000158F3F /* Bmob_SDK_iOS_v2.0.1 */,
 				7BF3EFC81E1BAB7200514019 /* FMDB */,
@@ -1051,6 +1117,8 @@
 				7B602DA11E1F45570041BF40 /* UIImage+Color.m */,
 				7B602DBB1E1F78720041BF40 /* UITextField+tool.h */,
 				7B602DBC1E1F78720041BF40 /* UITextField+tool.m */,
+				7B602DEC1E1FA2100041BF40 /* UIColor+HexColor.h */,
+				7B602DED1E1FA2100041BF40 /* UIColor+HexColor.m */,
 			);
 			path = Categray;
 			sourceTree = "<group>";
@@ -1101,6 +1169,8 @@
 			children = (
 				7BF3EFFC1E1BAEA700514019 /* CoderHomeViewController.h */,
 				7BF3EFFD1E1BAEA700514019 /* CoderHomeViewController.m */,
+				7B602DF51E1FA4D00041BF40 /* CoderSearchViewController.h */,
+				7B602DF61E1FA4D00041BF40 /* CoderSearchViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1321,11 +1391,14 @@
 				7BF3EF891E1BAAD300514019 /* LICENSE in Resources */,
 				7BF3EFBF1E1BAAD300514019 /* SVProgressHUD.bundle in Resources */,
 				7B602DE21E1F84070041BF40 /* CoderRegistViewController.xib in Resources */,
+				7B3FDDE21E2328A200641EED /* VedioCell.xib in Resources */,
 				7BF3EF781E1BAAD300514019 /* LICENSE in Resources */,
 				7BF3EFC11E1BAAD300514019 /* LICENSE in Resources */,
+				7B3FDDF11E23371100641EED /* WMPlayer.bundle in Resources */,
 				7B4366891E1CC3DA00158F3F /* MineInfoCell.xib in Resources */,
 				7B602DE41E1F84F10041BF40 /* newsData.plist in Resources */,
 				7BF3EF9F1E1BAAD300514019 /* MJRefresh.bundle in Resources */,
+				7B3FDDEF1E23371100641EED /* FastForwardView.xib in Resources */,
 				7BF3EFBC1E1BAAD300514019 /* LICENSE.txt in Resources */,
 				7BF3EE8D1E1BA79E00514019 /* Assets.xcassets in Resources */,
 				7B4366521E1C8CA000158F3F /* Bmob_iOS_SDK更新历史.txt in Resources */,
@@ -1359,8 +1432,10 @@
 				7BF3EF971E1BAAD300514019 /* MJProperty.m in Sources */,
 				7B602D9C1E1F43A30041BF40 /* PackNavController.m in Sources */,
 				7BF3EFB91E1BAAD300514019 /* UIImageView+HighlightedWebCache.m in Sources */,
+				7B3FDDF21E23371100641EED /* WMPlayer.m in Sources */,
 				7BF3EF721E1BAAD300514019 /* AFHTTPSessionManager.m in Sources */,
 				7BF3EFDA1E1BAB7200514019 /* FMDBHelper.m in Sources */,
+				7B602DF71E1FA4D00041BF40 /* CoderSearchViewController.m in Sources */,
 				7BF3EF8E1E1BAAD300514019 /* MASViewAttribute.m in Sources */,
 				7BF3EFDB1E1BAB7200514019 /* FMResultSet.m in Sources */,
 				7B602D9D1E1F43A30041BF40 /* PackViewController.m in Sources */,
@@ -1395,8 +1470,11 @@
 				7B43664E1E1C880600158F3F /* RootTabBarController.m in Sources */,
 				7B602DE11E1F84070041BF40 /* CoderRegistViewController.m in Sources */,
 				7B602DBD1E1F78720041BF40 /* UITextField+tool.m in Sources */,
+				7B3FDDE11E2328A200641EED /* VedioCell.m in Sources */,
 				7BF3EFAE1E1BAAD300514019 /* SDImageCache.m in Sources */,
 				7BF3EFC41E1BAAD300514019 /* YYClassInfo.m in Sources */,
+				7B602DEE1E1FA2100041BF40 /* UIColor+HexColor.m in Sources */,
+				7B3FDDF01E23371100641EED /* WMLightView.m in Sources */,
 				7BF3EF741E1BAAD300514019 /* AFSecurityPolicy.m in Sources */,
 				7BF3EFAC1E1BAAD300514019 /* MKAnnotationView+WebCache.m in Sources */,
 				7B602DAC1E1F4D810041BF40 /* CellFooterViews.m in Sources */,
@@ -1412,6 +1490,7 @@
 				7BF3EFF81E1BADCA00514019 /* AppDelegate.m in Sources */,
 				7BF3EF9B1E1BAAD300514019 /* NSObject+MJCoding.m in Sources */,
 				7BF3EF811E1BAAD300514019 /* UIRefreshControl+AFNetworking.m in Sources */,
+				7B602DF11E1FA3E50041BF40 /* CoderVidieViewController.m in Sources */,
 				7BF3EFC31E1BAAD300514019 /* NSObject+YYModel.m in Sources */,
 				7B602DC31E1F80D50041BF40 /* AXHttpTool.m in Sources */,
 				7BF3EF751E1BAAD300514019 /* AFURLRequestSerialization.m in Sources */,
@@ -1429,6 +1508,7 @@
 				7BF3EF8A1E1BAAD300514019 /* MASCompositeConstraint.m in Sources */,
 				7BF3EF731E1BAAD300514019 /* AFNetworkReachabilityManager.m in Sources */,
 				7BF3EFBE1E1BAAD300514019 /* SVIndefiniteAnimatedView.m in Sources */,
+				7B3FDDEE1E23371100641EED /* FastForwardView.m in Sources */,
 				7BF3EFBA1E1BAAD300514019 /* UIImageView+WebCache.m in Sources */,
 				7BF3EF991E1BAAD300514019 /* MJPropertyType.m in Sources */,
 				7BF3EF791E1BAAD300514019 /* README.md in Sources */,
@@ -1444,6 +1524,7 @@
 				7BF3EF951E1BAAD300514019 /* MJExtensionConst.m in Sources */,
 				7B602DB21E1F5C000041BF40 /* BigImageCell.m in Sources */,
 				7BF3EF9D1E1BAAD300514019 /* NSObject+MJProperty.m in Sources */,
+				7B3FDDF51E233F6500641EED /* VedioNews.m in Sources */,
 				7BF3EE821E1BA79E00514019 /* main.m in Sources */,
 				7BF3EFB31E1BAAD300514019 /* SDWebImageManager.m in Sources */,
 				7BF3EF871E1BAAD300514019 /* UITableView+FDTemplateLayoutCellDebug.m in Sources */,
@@ -1459,6 +1540,7 @@
 				7B602DB51E1F5C1B0041BF40 /* SmallImageCell.m in Sources */,
 				7BF3EFD81E1BAB7200514019 /* FMDatabasePool.m in Sources */,
 				7BF3EF981E1BAAD300514019 /* MJPropertyKey.m in Sources */,
+				7B602DF41E1FA4200041BF40 /* CoderNewCareViewController.m in Sources */,
 				7BF3EF7D1E1BAAD300514019 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				7BF3EFD91E1BAB7200514019 /* FMDatabaseQueue.m in Sources */,
 			);

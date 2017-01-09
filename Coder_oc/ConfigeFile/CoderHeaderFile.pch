@@ -19,6 +19,8 @@
 #import "AXHttpTool.h"
 #import "MJExtension.h"
 #import "UIImageView+WebCache.h"
+#import "UIColor+HexColor.h"
+#import "WMPlayer.h"
 
 #import <BmobSDK/Bmob.h>
 

@@ -10,6 +10,8 @@
 #import "CoderHomeViewController.h"
 #import "CoderMineViewController.h"
 #import "XLNavgationController.h"
+#import "CoderVidieViewController.h"
+#import "CoderNewCareViewController.h"
 
 
 #define kClassKey   @"rootVCClassString"
@@ -33,12 +35,12 @@
                                    kImgKey    : @"home_tabbar",
                                    kSelImgKey : @"home_tabbar_s"},
                                  
-                                 @{kClassKey  : @"CoderMineViewController",
+                                 @{kClassKey  : @"CoderVidieViewController",
                                    kTitleKey  : @"视频",
                                    kImgKey    : @"video_tabbar",
                                    kSelImgKey : @"video_tabbar_s"},
                                  
-                                 @{kClassKey  : @"CoderHomeViewController",
+                                 @{kClassKey  : @"CoderNewCareViewController",
                                    kTitleKey  : @"关注",
                                    kImgKey    : @"newcare_tabbar",
                                    kSelImgKey : @"newcare_tabbar_s"},
