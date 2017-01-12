@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+@class VedioNews;
 
 @interface VedioCell : UITableViewCell
 
 //开始播放视频按钮点击
-@property (nonatomic, copy) void (^vedioPlay)();
+@property (nonatomic, copy) void (^vedioPlay)(NSString *vedioUrl);
+
+@property (nonatomic, strong) VedioNews *model;
 
 @end

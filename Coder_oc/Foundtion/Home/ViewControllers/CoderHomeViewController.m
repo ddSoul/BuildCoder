@@ -13,6 +13,7 @@
 #import "SmallImageCell.h"
 #import "TextCell.h"
 #import "News.h"
+#import "XLRefreshHeader.h"
 
 @interface CoderHomeViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -38,6 +39,13 @@
     [self configeHomeNavgationItem];
     [self.view addSubview:self.labelsView];
     [self.view addSubview:self.newslist];
+    
+    YYFPSLabel *fpsLabel = [[YYFPSLabel alloc] initWithFrame:CGRectMake(10, 60, 80, 30)];
+    [self.view addSubview:fpsLabel];
+    
+    [self.newslist addRefreshHeaderWithHandle:^{
+        NSLog(@"kaishi刷新了");
+    }];
 }
 
 - (void)requestData
@@ -144,6 +152,11 @@
     BigImageCell *cell = [tableView dequeueReusableCellWithIdentifier:@"textCell" forIndexPath:indexPath];
     cell.model = newsModel;
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self.newslist.header endRefreshing];
 }
 
 - (void)toSearchVc

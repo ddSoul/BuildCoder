@@ -7,6 +7,7 @@
 //
 
 #import "VedioCell.h"
+#import "VedioNews.h"
 
 @interface VedioCell ()
 @property (strong, nonatomic) IBOutlet UIImageView *coverImageView;
@@ -14,6 +15,7 @@
 @property (strong, nonatomic) IBOutlet UIImageView *writerImageView;
 @property (strong, nonatomic) IBOutlet UILabel *writerLabel;
 @property (strong, nonatomic) IBOutlet UIButton *vedioPlayButton;
+@property (nonatomic, copy) NSString *vedioUrlString;
 
 @end
 
@@ -24,7 +26,7 @@
 - (IBAction)StarVedioButton:(UIButton *)sender {
     
     if (self.vedioPlay) {
-        self.vedioPlay();
+        self.vedioPlay(self.vedioUrlString);
     }
 }
 
@@ -33,6 +35,15 @@
     self.writerLabel.text = @"hello";
     self.vedioPlayButton.tag = 0;
     // Initialization code
+}
+
+- (void)setModel:(VedioNews *)model
+{
+    [self.coverImageView sd_setImageWithURL:[NSURL URLWithString:model.cover]];
+    self.vedioUrlString = model.mp4_url;
+    self.writerLabel.text = model.writer;
+    self.titleLabel.text = model.topic;
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

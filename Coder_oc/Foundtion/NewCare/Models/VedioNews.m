@@ -10,4 +10,10 @@
 
 @implementation VedioNews
 
+- (NSString *)description
+{
+    NSArray *keys = @[@"cover",@"mp4_url",@"topic",@"writerAvtarUrl",@"writer",@"readerCount",@"commentCount"];
+    return [self dictionaryWithValuesForKeys:keys].description;
+}
+
 @end

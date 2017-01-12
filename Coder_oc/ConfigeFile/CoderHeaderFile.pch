@@ -20,7 +20,10 @@
 #import "MJExtension.h"
 #import "UIImageView+WebCache.h"
 #import "UIColor+HexColor.h"
+#import "UIView+frame.h"
 #import "WMPlayer.h"
+#import "UIScrollView+XLRefresh.h"
+#import "YYFPSLabel.h"
 
 #import <BmobSDK/Bmob.h>
 

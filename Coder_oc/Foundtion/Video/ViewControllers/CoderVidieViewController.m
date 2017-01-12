@@ -9,12 +9,15 @@
 #import "CoderVidieViewController.h"
 #import "HomeLabelViews.h"
 #import "VedioCell.h"
+#import "VedioNews.h"
 
 @interface CoderVidieViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *vedioList;
 
 @property (nonatomic, strong) WMPlayer *wmPlayer;
+
+@property (nonatomic, strong) NSMutableArray *newsDataArray;
 
 @end
 
@@ -24,12 +27,13 @@
     [super viewDidLoad];
     [self initUI];
     [self configeVideoNavgationItem];
+    [self requestVedioNesData];
     // Do any additional setup after loading the view.
 }
 
 - (void)initUI
 {
-    self.vedioList = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight)];
+    self.vedioList = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight - KNavgationItemHeight)];
     self.vedioList.delegate = self;
     self.vedioList.dataSource = self;
     [self.vedioList registerNib:[UINib nibWithNibName:@"VedioCell" bundle:nil] forCellReuseIdentifier:@"vediecell"];
@@ -44,6 +48,19 @@
     self.navigationItem.titleView = navLabels;
 }
 
+- (void)requestVedioNesData
+{
+    //假数据
+    NSArray *tempArray = [[NSArray alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"VedioData.plist" ofType:nil]];
+    
+    for (NSDictionary *value in tempArray) {
+        VedioNews *newModel = [VedioNews mj_objectWithKeyValues:value];
+        [self.newsDataArray addObject:newModel];
+    }
+    [_vedioList reloadData];
+
+}
+
 #pragma mark - tableViewDelegate,dataSource
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -52,7 +69,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;
+    return self.newsDataArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -61,19 +78,30 @@
                                                          forIndexPath:indexPath];
     
     __weak typeof(cell) weakCell = cell;
-    cell.vedioPlay = ^(){
-        [weakCell.contentView addSubview:self.wmPlayer];
-        [self.wmPlayer play];
+    __weak typeof (self) weakSelf = self;
+    cell.vedioPlay = ^(NSString *vedioUrl){
+        [weakCell.contentView addSubview:weakSelf.wmPlayer];
+        weakSelf.wmPlayer.URLString = vedioUrl;
+        [weakSelf.wmPlayer play];
     };
+    cell.model = self.newsDataArray[indexPath.row];
     return cell;
 }
+
+- (NSMutableArray *)newsDataArray
+{
+    if (!_newsDataArray) {
+        _newsDataArray = @[].mutableCopy;
+    }
+    return _newsDataArray;
+}
+
+
 
 - (WMPlayer *)wmPlayer
 {
     if (!_wmPlayer) {
-        //        _wmPlayer = [[WMPlayer alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight) videoURLStr:[NSURL URLWithString:@""]];
-        _wmPlayer = [[WMPlayer alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 200)];
-        _wmPlayer.URLString = @"http://flv2.bn.netease.com/videolib3/1701/01/diFGq4703/SD/diFGq4703-mobile.mp4";
+        _wmPlayer = [[WMPlayer alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 147)];
         _wmPlayer.closeBtn.hidden = YES;
     }
     return _wmPlayer;

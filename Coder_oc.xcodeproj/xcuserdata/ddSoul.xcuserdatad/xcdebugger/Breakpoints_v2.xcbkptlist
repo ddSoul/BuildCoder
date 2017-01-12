@@ -153,29 +153,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Coder_oc/Foundtion/Home/ViewControllers/CoderHomeViewController.m"
-            timestampString = "505390444.689605"
+            filePath = "Coder_oc/Foundtion/Video/Views/VedioCell.m"
+            timestampString = "505642720.086804"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "-requestData"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Coder_oc/Foundtion/Home/ViewControllers/CoderHomeViewController.m"
-            timestampString = "505390444.689605"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
-            landmarkName = "-tableView:heightForRowAtIndexPath:"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "-setModel:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
