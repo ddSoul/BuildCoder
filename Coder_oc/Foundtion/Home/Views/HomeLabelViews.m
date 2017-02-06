@@ -47,6 +47,21 @@
             [btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
         }
     }
+    
+    UIButton *managerButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    managerButton.backgroundColor = [UIColor grayColor];
+    [managerButton addTarget:self.delegate action:@selector(managerButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:managerButton];
+    
+    [managerButton mas_makeConstraints:^(MASConstraintMaker *make){
+        make.top.right.bottom.mas_equalTo(0);
+        make.width.mas_equalTo(60);
+    }];
 }
+
+//- (void)managerClick:(UIButton *)button
+//{
+//    NSLog(@"____管理点击了");
+//}
 
 @end

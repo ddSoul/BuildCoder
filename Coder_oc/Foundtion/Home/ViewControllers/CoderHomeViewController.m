@@ -14,8 +14,9 @@
 #import "TextCell.h"
 #import "News.h"
 #import "XLRefreshHeader.h"
+#import "CoderLabelsManagerVC.h"
 
-@interface CoderHomeViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface CoderHomeViewController ()<UITableViewDelegate,UITableViewDataSource,ManageButtonClickDelegte>
 
 @property (nonatomic, strong) HomeLabelViews *labelsView;
 
@@ -72,6 +73,7 @@
 {
     if (!_labelsView) {
         _labelsView = [[HomeLabelViews alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, KHomeLabelsHeight)];
+        _labelsView.delegate = self;
     }
     return _labelsView;
 }
@@ -166,8 +168,11 @@
     [self.navigationController pushViewController:searchVc animated:YES];
 }
 
-
-
+- (void)managerButtonClick:(UIButton *)button
+{
+    CoderLabelsManagerVC *labelsManagerVC = [[CoderLabelsManagerVC alloc] init];
+    [self presentViewController:labelsManagerVC animated:YES completion:nil];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

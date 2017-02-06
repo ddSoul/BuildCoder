@@ -72,6 +72,8 @@
 		7B4366831E1CC39200158F3F /* MineHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B4366821E1CC39200158F3F /* MineHeaderView.m */; };
 		7B4366881E1CC3DA00158F3F /* MineInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B4366861E1CC3DA00158F3F /* MineInfoCell.m */; };
 		7B4366891E1CC3DA00158F3F /* MineInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B4366871E1CC3DA00158F3F /* MineInfoCell.xib */; };
+		7B4FF2D81E45D97E0038D21E /* CoderLabelsManagerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B4FF2D71E45D97E0038D21E /* CoderLabelsManagerVC.m */; };
+		7B4FF2DB1E45DB6B0038D21E /* ManagerLabelsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B4FF2DA1E45DB6B0038D21E /* ManagerLabelsCell.m */; };
 		7B602D9C1E1F43A30041BF40 /* PackNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B602D951E1F43A30041BF40 /* PackNavController.m */; };
 		7B602D9D1E1F43A30041BF40 /* PackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B602D971E1F43A30041BF40 /* PackViewController.m */; };
 		7B602D9E1E1F43A30041BF40 /* UIViewController+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B602D991E1F43A30041BF40 /* UIViewController+Category.m */; };
@@ -328,6 +330,10 @@
 		7B4366851E1CC3DA00158F3F /* MineInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineInfoCell.h; sourceTree = "<group>"; };
 		7B4366861E1CC3DA00158F3F /* MineInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineInfoCell.m; sourceTree = "<group>"; };
 		7B4366871E1CC3DA00158F3F /* MineInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineInfoCell.xib; sourceTree = "<group>"; };
+		7B4FF2D61E45D97E0038D21E /* CoderLabelsManagerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoderLabelsManagerVC.h; sourceTree = "<group>"; };
+		7B4FF2D71E45D97E0038D21E /* CoderLabelsManagerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoderLabelsManagerVC.m; sourceTree = "<group>"; };
+		7B4FF2D91E45DB6B0038D21E /* ManagerLabelsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagerLabelsCell.h; sourceTree = "<group>"; };
+		7B4FF2DA1E45DB6B0038D21E /* ManagerLabelsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagerLabelsCell.m; sourceTree = "<group>"; };
 		7B602D941E1F43A30041BF40 /* PackNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PackNavController.h; sourceTree = "<group>"; };
 		7B602D951E1F43A30041BF40 /* PackNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PackNavController.m; sourceTree = "<group>"; };
 		7B602D961E1F43A30041BF40 /* PackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PackViewController.h; sourceTree = "<group>"; };
@@ -1406,6 +1412,8 @@
 				7BF3EFFD1E1BAEA700514019 /* CoderHomeViewController.m */,
 				7B602DF51E1FA4D00041BF40 /* CoderSearchViewController.h */,
 				7B602DF61E1FA4D00041BF40 /* CoderSearchViewController.m */,
+				7B4FF2D61E45D97E0038D21E /* CoderLabelsManagerVC.h */,
+				7B4FF2D71E45D97E0038D21E /* CoderLabelsManagerVC.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1423,6 +1431,8 @@
 				7B602DB41E1F5C1B0041BF40 /* SmallImageCell.m */,
 				7B602DB61E1F5C2C0041BF40 /* TextCell.h */,
 				7B602DB71E1F5C2C0041BF40 /* TextCell.m */,
+				7B4FF2D91E45DB6B0038D21E /* ManagerLabelsCell.h */,
+				7B4FF2DA1E45DB6B0038D21E /* ManagerLabelsCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1675,6 +1685,7 @@
 				7BF3EFDA1E1BAB7200514019 /* FMDBHelper.m in Sources */,
 				7B602DF71E1FA4D00041BF40 /* CoderSearchViewController.m in Sources */,
 				7BF3EF8E1E1BAAD300514019 /* MASViewAttribute.m in Sources */,
+				7B4FF2D81E45D97E0038D21E /* CoderLabelsManagerVC.m in Sources */,
 				7BF3EFDB1E1BAB7200514019 /* FMResultSet.m in Sources */,
 				7B3FDE6B1E23625A00641EED /* YYLabel.m in Sources */,
 				7B602D9D1E1F43A30041BF40 /* PackViewController.m in Sources */,
@@ -1731,6 +1742,7 @@
 				7B3FDE5D1E23625A00641EED /* NSParagraphStyle+YYText.m in Sources */,
 				7BF3EFAC1E1BAAD300514019 /* MKAnnotationView+WebCache.m in Sources */,
 				7B3FDE601E23625A00641EED /* UIGestureRecognizer+YYAdd.m in Sources */,
+				7B4FF2DB1E45DB6B0038D21E /* ManagerLabelsCell.m in Sources */,
 				7B602DAC1E1F4D810041BF40 /* CellFooterViews.m in Sources */,
 				7BF3EF9C1E1BAAD300514019 /* NSObject+MJKeyValue.m in Sources */,
 				7B602DA61E1F49EC0041BF40 /* SuperViewController.m in Sources */,

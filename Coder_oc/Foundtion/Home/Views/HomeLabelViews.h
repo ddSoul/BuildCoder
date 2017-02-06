@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol ManageButtonClickDelegte <NSObject>
+
+- (void)managerButtonClick:(UIButton *)button;
+
+@end
+
 @interface HomeLabelViews : UIView
+
+@property (nonatomic, assign) id<ManageButtonClickDelegte> delegate;
 
 @end
