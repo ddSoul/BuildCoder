@@ -194,6 +194,8 @@
 		7BF3EFF81E1BADCA00514019 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF3EFF61E1BADCA00514019 /* AppDelegate.m */; };
 		7BF3EFFE1E1BAEA700514019 /* CoderHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF3EFFD1E1BAEA700514019 /* CoderHomeViewController.m */; };
 		7BF3F0011E1BAEB600514019 /* CoderMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF3F0001E1BAEB600514019 /* CoderMineViewController.m */; };
+		7BF69EED1E4B0E4F00540364 /* ShareAlertViews.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF69EEC1E4B0E4F00540364 /* ShareAlertViews.m */; };
+		7BF69EF11E4B19BC00540364 /* WKWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF69EF01E4B19BC00540364 /* WKWebViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -574,6 +576,10 @@
 		7BF3EFFD1E1BAEA700514019 /* CoderHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoderHomeViewController.m; sourceTree = "<group>"; };
 		7BF3EFFF1E1BAEB600514019 /* CoderMineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoderMineViewController.h; sourceTree = "<group>"; };
 		7BF3F0001E1BAEB600514019 /* CoderMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoderMineViewController.m; sourceTree = "<group>"; };
+		7BF69EEB1E4B0E4F00540364 /* ShareAlertViews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareAlertViews.h; sourceTree = "<group>"; };
+		7BF69EEC1E4B0E4F00540364 /* ShareAlertViews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareAlertViews.m; sourceTree = "<group>"; };
+		7BF69EEF1E4B19BC00540364 /* WKWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKWebViewController.h; sourceTree = "<group>"; };
+		7BF69EF01E4B19BC00540364 /* WKWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKWebViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1401,6 +1407,8 @@
 		7BF3EFE91E1BACCB00514019 /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				7BF69EEF1E4B19BC00540364 /* WKWebViewController.h */,
+				7BF69EF01E4B19BC00540364 /* WKWebViewController.m */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -1433,6 +1441,8 @@
 				7B602DB71E1F5C2C0041BF40 /* TextCell.m */,
 				7B4FF2D91E45DB6B0038D21E /* ManagerLabelsCell.h */,
 				7B4FF2DA1E45DB6B0038D21E /* ManagerLabelsCell.m */,
+				7BF69EEB1E4B0E4F00540364 /* ShareAlertViews.h */,
+				7BF69EEC1E4B0E4F00540364 /* ShareAlertViews.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1719,6 +1729,7 @@
 				7BF3EFD71E1BAB7200514019 /* FMDatabaseAdditions.m in Sources */,
 				7BF3EF9E1E1BAAD300514019 /* NSString+MJExtension.m in Sources */,
 				7B3FDE551E23625A00641EED /* YYTextAttribute.m in Sources */,
+				7BF69EF11E4B19BC00540364 /* WKWebViewController.m in Sources */,
 				7B602D9E1E1F43A30041BF40 /* UIViewController+Category.m in Sources */,
 				7BF3EFBB1E1BAAD300514019 /* UIView+WebCacheOperation.m in Sources */,
 				7BF3EFB21E1BAAD300514019 /* SDWebImageDownloaderOperation.m in Sources */,
@@ -1779,6 +1790,7 @@
 				7BF3EFC01E1BAAD300514019 /* SVProgressHUD.m in Sources */,
 				7BF3EF921E1BAAD300514019 /* View+MASAdditions.m in Sources */,
 				7BF3EF8C1E1BAAD300514019 /* MASConstraintMaker.m in Sources */,
+				7BF69EED1E4B0E4F00540364 /* ShareAlertViews.m in Sources */,
 				7BF3EF851E1BAAD300514019 /* UITableView+FDKeyedHeightCache.m in Sources */,
 				7B602DB81E1F5C2C0041BF40 /* TextCell.m in Sources */,
 				7BF3EF8A1E1BAAD300514019 /* MASCompositeConstraint.m in Sources */,

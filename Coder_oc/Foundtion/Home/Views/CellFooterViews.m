@@ -20,6 +20,11 @@
 
 @property (nonatomic, strong) UILabel *time;
 
+/**
+ 评论按钮
+ */
+@property (nonatomic, strong) UIButton *commentButton;
+
 @end
 
 @implementation CellFooterViews
@@ -88,7 +93,27 @@
         make.bottom.mas_equalTo(-2);
 
     }];
+    
+    _commentButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [_commentButton setTitle:@"点击分享" forState:UIControlStateNormal];
+    _commentButton.backgroundColor = [UIColor redColor];
+    [_commentButton addTarget:self action:@selector(tapCommentButton:) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:_commentButton];
+    
+    [_commentButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(5);
+        make.right.mas_equalTo(-10);
+        make.bottom.mas_equalTo(-2);
+    }];
 
+}
+
+- (void)tapCommentButton:(UIButton *)button
+{
+    if (self.shareButtonClick) {
+        self.shareButtonClick(button);
+    }
+    NSLog(@"_________%f_________%f",_commentButton.bounds.origin.y,self.y);
 }
 
 - (void)setFmodel:(FootModel *)fmodel

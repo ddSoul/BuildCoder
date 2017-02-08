@@ -9,8 +9,12 @@
 #import <UIKit/UIKit.h>
 @class News;
 
+#import "CellFooterViews.h"
+
 @interface BigImageCell : UITableViewCell
 
 @property (nonatomic, strong) News *model;
+
+@property (nonatomic, strong) CellFooterViews *footerViews;
 
 @end

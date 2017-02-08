@@ -15,6 +15,7 @@
 #import "News.h"
 #import "XLRefreshHeader.h"
 #import "CoderLabelsManagerVC.h"
+#import "ShareAlertViews.h"
 
 @interface CoderHomeViewController ()<UITableViewDelegate,UITableViewDataSource,ManageButtonClickDelegte>
 
@@ -23,6 +24,7 @@
 @property (nonatomic, strong) UITableView *newslist;
 
 @property (nonatomic, strong) NSMutableArray *newsDataArray;
+
 
 @end
 
@@ -49,6 +51,7 @@
     }];
 }
 
+#pragma mark - 数据
 - (void)requestData
 {
     //假数据
@@ -129,12 +132,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    //count==0,returen
     if (!self.newsDataArray.count) {
         BigImageCell *cell = [tableView dequeueReusableCellWithIdentifier:@"bigImage" forIndexPath:indexPath];
         return cell;
     }
     
+    //三种cell
     News *newsModel = [News new];
     newsModel = self.newsDataArray[indexPath.row];
     HomeCellType cellType = newsModel.type;
@@ -142,6 +146,13 @@
     if (cellType == bigImageType) {
         BigImageCell *cell = [tableView dequeueReusableCellWithIdentifier:@"bigImage" forIndexPath:indexPath];
         cell.model = newsModel;
+        cell.footerViews.shareButtonClick = ^(UIButton *button){
+
+            CGPoint point = [button convertPoint:button.center fromView:self.view];
+            ShareAlertViews *alertViews = [[ShareAlertViews alloc] initAlertViewsWithHeight:-point.y];
+            [self.view addSubview:alertViews];
+            button.backgroundColor = [UIColor orangeColor];
+        };
         return cell;
     }
     
@@ -159,6 +170,14 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self.newslist.header endRefreshing];
+    WKWebViewController *wkwebViewController = [[WKWebViewController alloc] init];
+    wkwebViewController.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:wkwebViewController animated:YES];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+//    NSLog(@"---run---%@",[NSRunLoop currentRunLoop].currentMode);
 }
 
 - (void)toSearchVc

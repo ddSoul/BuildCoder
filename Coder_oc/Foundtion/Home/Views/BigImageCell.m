@@ -14,7 +14,7 @@
 
 @property (nonatomic, strong) UILabel *label;
 
-@property (nonatomic, strong) CellFooterViews *footerViews;
+//@property (nonatomic, strong) CellFooterViews *footerViews;
 
 @property (nonatomic, strong) UIImageView *bigImageView;
 
