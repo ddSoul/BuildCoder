@@ -19,6 +19,7 @@ static char *KString        = "KString";
 
 
 /** runtime添加属性
+ *  可能后续需要用到下属性
  *  marginTop文字区的上边距
  *  lineSpace行间距
  *  handle点击之后的处理
@@ -96,41 +97,56 @@ static char *KString        = "KString";
 }
 
 /** 对tapPoint进行对比判断 */
-- (BOOL)xL_isContainPoint:(CGPoint)point
+- (void)xL_containPointHandle:(CGPoint)point
 {
     if (!self.isTapAction) {
-        return NO;
+        return;
     }
     
-    UIFont *font = [UIFont systemFontOfSize:18];
+    UIFont *font = [UIFont systemFontOfSize:self.font.pointSize];
     
     NSArray *stringArray = [self.text componentsSeparatedByString:self.tapString];
     
     NSString *beforeString = [stringArray objectAtIndex:0];
-    CGSize beforeSize = [beforeString sizeWithAttributes:[NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName,nil]];
     
-    CGSize sizeW = [self.tapString sizeWithAttributes:[NSDictionary dictionaryWithObjectsAndKeys:font,NSFontAttributeName, nil]];
-    CGSize sizeH = [self.text boundingRectWithSize:CGSizeMake(self.frame.size.width, MAXFLOAT)
-                                               options:NSStringDrawingUsesLineFragmentOrigin
-                                            attributes:@{NSFontAttributeName:font}
-                                               context:nil].size;
-    self.marginTop = (self.frame.size.height - sizeH.height)/2;
+    CGFloat beforeSizeW = [self getSizeWidthWithLabelString:beforeString
+                                                       font:font];
     
-    CGRect rect = CGRectMake(beforeSize.width, self.marginTop, sizeW.width, sizeH.height);
+    CGFloat sizeW = [self getSizeWidthWithLabelString:self.tapString
+                                                 font:font];
+    
+    CGFloat sizeH = [self getSizeHeightWithLabelString:self.text
+                                                  font:font];
+    self.marginTop = (self.frame.size.height - sizeH)/2;
+    
+    //    NSInteger lineCount = sizeH.height/font.lineHeight;
+    CGRect rect = CGRectMake(beforeSizeW, self.marginTop, sizeW, font.lineHeight);
     
     if (CGRectContainsPoint(rect, point)){
         self.handle();
     }
     
-    return YES;
+}
+//** 计算size*/
+- (CGFloat)getSizeWidthWithLabelString:(NSString *)string font:(UIFont *)font
+{
+    CGSize size = [string sizeWithAttributes:[NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName,nil]];
+    return size.width;
+}
+- (CGFloat)getSizeHeightWithLabelString:(NSString *)string font:(UIFont *)font
+{
+    CGSize size = [string boundingRectWithSize:CGSizeMake(self.frame.size.width, MAXFLOAT)
+                                       options:NSStringDrawingUsesLineFragmentOrigin
+                                    attributes:@{NSFontAttributeName:font}
+                                       context:nil].size;
+    return size.height;
 }
 
 ///** 重写系统HitTest:Event方法*/
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event
 {
-    if ([self xL_isContainPoint:point]) {
-        //处理啥呢
-    }
+    [self xL_containPointHandle:point];
+    
     return [super hitTest:point withEvent:event];
 }
 
