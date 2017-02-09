@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B36E3EA1E4C727A00BAF1F6 /* UILabel+XLAtrtributeTextTap.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B36E3E91E4C727A00BAF1F6 /* UILabel+XLAtrtributeTextTap.m */; };
 		7B3FDDE11E2328A200641EED /* VedioCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B3FDDDF1E2328A200641EED /* VedioCell.m */; };
 		7B3FDDE21E2328A200641EED /* VedioCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B3FDDE01E2328A200641EED /* VedioCell.xib */; };
 		7B3FDDEE1E23371100641EED /* FastForwardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B3FDDE71E23371100641EED /* FastForwardView.m */; };
@@ -216,6 +217,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B36E3E81E4C727A00BAF1F6 /* UILabel+XLAtrtributeTextTap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+XLAtrtributeTextTap.h"; sourceTree = "<group>"; };
+		7B36E3E91E4C727A00BAF1F6 /* UILabel+XLAtrtributeTextTap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+XLAtrtributeTextTap.m"; sourceTree = "<group>"; };
 		7B3FDDDE1E2328A200641EED /* VedioCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VedioCell.h; sourceTree = "<group>"; };
 		7B3FDDDF1E2328A200641EED /* VedioCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VedioCell.m; sourceTree = "<group>"; };
 		7B3FDDE01E2328A200641EED /* VedioCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VedioCell.xib; sourceTree = "<group>"; };
@@ -618,6 +621,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B36E3E71E4C727A00BAF1F6 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				7B36E3E81E4C727A00BAF1F6 /* UILabel+XLAtrtributeTextTap.h */,
+				7B36E3E91E4C727A00BAF1F6 /* UILabel+XLAtrtributeTextTap.m */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
 		7B3FDDE41E23371100641EED /* WMPlayer */ = {
 			isa = PBXGroup;
 			children = (
@@ -1498,6 +1510,7 @@
 		7BF3EFF11E1BACCB00514019 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				7B36E3E71E4C727A00BAF1F6 /* Others */,
 				7B602DBE1E1F80D50041BF40 /* NetWork */,
 				7B4366781E1CA64100158F3F /* SVPHub */,
 			);
@@ -1703,6 +1716,7 @@
 				7B3FDE541E23625A00641EED /* YYTextArchiver.m in Sources */,
 				7B4366681E1C8E7000158F3F /* ThirdKey.m in Sources */,
 				7BF3EF901E1BAAD300514019 /* NSArray+MASAdditions.m in Sources */,
+				7B36E3EA1E4C727A00BAF1F6 /* UILabel+XLAtrtributeTextTap.m in Sources */,
 				7B3FDE681E23625A00641EED /* YYTextWeakProxy.m in Sources */,
 				7B602DE81E1F87260041BF40 /* News.m in Sources */,
 				7B3FDE4D1E23625A00641EED /* YYTextEffectWindow.m in Sources */,

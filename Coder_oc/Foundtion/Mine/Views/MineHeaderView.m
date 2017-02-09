@@ -27,6 +27,8 @@
  */
 - (void)createControls
 {
+    self.userInteractionEnabled = YES;
+    
     self.avtorImageView_b = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, self.frame.size.height)];
     self.avtorImageView_b.image = [UIImage imageNamed:@"login_b"];
     [self addSubview:self.avtorImageView_b];
@@ -38,6 +40,23 @@
     self.userNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
     self.userNameLabel.textAlignment = NSTextAlignmentCenter;
     [self addSubview:self.userNameLabel];
+    
+    
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+    button.backgroundColor = [UIColor greenColor];
+    [button addTarget:self action:@selector(click) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:button];
+}
+
+- (void)click
+{
+    NSLog(@"_____docidaci");
+}
+
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event
+{
+    NSLog(@"hitTest");
+    return [super hitTest:point withEvent:event];
 }
 
 
