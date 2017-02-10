@@ -9,6 +9,11 @@
 #import "UILabel+XLAtrtributeTextTap.h"
 #import <objc/runtime.h>
 
+typedef NS_ENUM(NSInteger ,XLTapStringLocationType){
+    XLTapStringLocationWithEquleLine,
+    XLTapStringLocationWithDifferentLines,
+};
+
 @implementation UILabel (XLAtrtributeTextTap)
 
 static char *KMarginTop     = "KMarginTop";
@@ -82,17 +87,15 @@ static char *KString        = "KString";
 {
     return objc_getAssociatedObject(self, &KString);
 }
-
-
 /** 需要点击的字符串*/
 - (void)xl_addAttributeTextTapActionWithString:(NSString *)string
                                         handle:(void (^)())handle
 {
     self.isTapAction = YES;
-    self.tapString = string;
+    self.tapString   = string;
     
     if (self.handle != handle) {
-        self.handle = handle;
+        self.handle  = handle;
     }
 }
 
@@ -103,30 +106,134 @@ static char *KString        = "KString";
         return;
     }
     
-    UIFont *font = [UIFont systemFontOfSize:self.font.pointSize];
+    BOOL isResponse;
     
-    NSArray *stringArray = [self.text componentsSeparatedByString:self.tapString];
-    
-    NSString *beforeString = [stringArray objectAtIndex:0];
-    
-    CGFloat beforeSizeW = [self getSizeWidthWithLabelString:beforeString
-                                                       font:font];
-    
-    CGFloat sizeW = [self getSizeWidthWithLabelString:self.tapString
-                                                 font:font];
-    
-    CGFloat sizeH = [self getSizeHeightWithLabelString:self.text
-                                                  font:font];
-    self.marginTop = (self.frame.size.height - sizeH)/2;
-    
-    //    NSInteger lineCount = sizeH.height/font.lineHeight;
-    CGRect rect = CGRectMake(beforeSizeW, self.marginTop, sizeW, font.lineHeight);
-    
-    if (CGRectContainsPoint(rect, point)){
-        self.handle();
+    if ([self isLocateEqualLineWithTapString:self.tapString]) {
+        isResponse =  [self isContainsPoint:point
+                               locationType:XLTapStringLocationWithEquleLine];
+    }else{
+        isResponse = [self isContainsPoint:point
+                              locationType:XLTapStringLocationWithDifferentLines];
     }
     
+    if (isResponse) {
+        self.handle();
+    }
 }
+
+//** 判断所要点击的文字是否在一行*/
+- (BOOL)isLocateEqualLineWithTapString:(NSString *)string
+{
+    NSString *firstAtString    = [string substringToIndex:1];
+    NSString *beforeString     = [[self xl_componentsSeparatedByString:self.tapString] objectAtIndex:0];
+    NSString *splStringWithf   = [NSString stringWithFormat:@"%@%@",beforeString,firstAtString];
+    NSString *splStringWithA   = [NSString stringWithFormat:@"%@%@",beforeString,string];
+    CGFloat  splStringWithAFH  = [self getSizeHeightWithLabelString:splStringWithf
+                                                               font:[UIFont systemFontOfSize:self.font.pointSize]];
+    CGFloat  splStringWithAH   = [self getSizeHeightWithLabelString:splStringWithA
+                                                               font:[UIFont systemFontOfSize:self.font.pointSize]];
+    if (splStringWithAFH == splStringWithAH) {
+        return YES;
+    }
+    return NO;
+}
+
+//** 点击字符串判断包含关系*/
+- (BOOL)isContainsPoint:(CGPoint)point locationType:(XLTapStringLocationType)locationType
+{
+    if (locationType == XLTapStringLocationWithEquleLine) {
+        
+        UIFont *font               = [UIFont systemFontOfSize:self.font.pointSize];
+        
+        NSString *beforeString     = [[self xl_componentsSeparatedByString:self.tapString] objectAtIndex:0];
+        
+        CGFloat beforeSizeW        = [self getSizeWidthWithLabelString:beforeString
+                                                                  font:font];
+        
+        CGFloat sizeW              = [self getSizeWidthWithLabelString:self.tapString
+                                                                  font:font];
+        
+        CGFloat sizeH              = [self getSizeHeightWithLabelString:self.text
+                                                                   font:font];
+        
+        CGFloat beforeStringH      = [self getSizeHeightWithLabelString:beforeString
+                                                                   font:[UIFont systemFontOfSize:self.font.pointSize]];
+        
+        //说明在同一行，并且不定头
+        if (beforeStringH < self.frame.size.width) {
+            self.marginTop         = (self.frame.size.height - sizeH)/2 + beforeStringH - font.lineHeight;
+        }else{
+            self.marginTop         = (self.frame.size.height - sizeH)/2 + beforeStringH;
+        }
+        
+        
+        CGRect rect = CGRectMake(beforeSizeW, self.marginTop, sizeW, font.lineHeight);
+        
+        return CGRectContainsPoint(rect, point);
+    }
+    
+    for(int i = 1; i<self.tapString.length; i++){
+        
+        NSString *tempString       = [self.tapString substringFromIndex:i];
+        
+        NSString *beforeString     = [[self xl_componentsSeparatedByString:self.tapString] objectAtIndex:0];
+        
+        NSString *splString        = [NSString stringWithFormat:@"%@%@",beforeString,tempString];
+        
+        NSString *mergeString      = [NSString stringWithFormat:@"%@%@",beforeString,self.tapString];
+        
+        CGFloat mergeStringH       = [self getSizeHeightWithLabelString:mergeString
+                                                                   font:[UIFont systemFontOfSize:self.font.pointSize]];
+        
+        CGFloat splStringH         = [self getSizeHeightWithLabelString:splString
+                                                                   font:[UIFont systemFontOfSize:self.font.pointSize]];
+        
+        CGFloat beforeStringW      = [self getSizeWidthWithLabelString:beforeString
+                                                                  font:[UIFont systemFontOfSize:self.font.pointSize]];
+        
+        CGFloat tempStringW        = [self getSizeWidthWithLabelString:tempString
+                                                                  font:[UIFont systemFontOfSize:self.font.pointSize]];
+        
+        CGFloat sizeH              = [self getSizeHeightWithLabelString:self.text
+                                                                   font:[UIFont systemFontOfSize:self.font.pointSize]];
+        
+        CGFloat beforeStringH      = [self getSizeHeightWithLabelString:beforeString
+                                                                   font:[UIFont systemFontOfSize:self.font.pointSize]];
+        
+        if (mergeStringH != splStringH) {
+            
+            self.marginTop         = (self.frame.size.height - sizeH)/2 + beforeStringH - self.font.lineHeight;
+            
+            CGRect rect1 = CGRectMake(beforeStringW, self.marginTop, tempStringW, self.font.lineHeight);
+            
+            NSString *nextLineString = [self.tapString stringByReplacingOccurrencesOfString:tempString withString:@""];
+            CGFloat nextStringW    = [self getSizeWidthWithLabelString:nextLineString
+                                                                  font:[UIFont systemFontOfSize:self.font.pointSize]];
+            
+            self.marginTop         = (self.frame.size.height - sizeH)/2 + beforeStringH;
+            
+            CGRect rect2 = CGRectMake(0, self.marginTop, nextStringW, self.font.lineHeight);
+            
+            return CGRectContainsPoint(rect1, point) || CGRectContainsPoint(rect2, point);
+        }
+    }
+    
+    return NO;
+}
+//** 点击字符串不在一行判断*/
+- (BOOL)isContainsRectOndifferentLines
+{
+    return YES;
+}
+
+//** 字符串截取*/
+- (NSArray *)xl_componentsSeparatedByString:(NSString *)string
+{
+    NSArray *array;
+    array = [self.text componentsSeparatedByString:string];
+    return array;
+}
+
 //** 计算size*/
 - (CGFloat)getSizeWidthWithLabelString:(NSString *)string font:(UIFont *)font
 {
@@ -142,7 +249,7 @@ static char *KString        = "KString";
     return size.height;
 }
 
-///** 重写系统HitTest:Event方法*/
+//** 重写系统HitTest:Event方法*/
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event
 {
     [self xL_containPointHandle:point];
