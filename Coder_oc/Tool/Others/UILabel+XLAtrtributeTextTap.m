@@ -158,16 +158,19 @@ static char *KString        = "KString";
         
         CGFloat beforeStringH      = [self getSizeHeightWithLabelString:beforeString
                                                                    font:[UIFont systemFontOfSize:self.font.pointSize]];
-        
+        CGRect rect;
         //说明在同一行，并且不定头
-        if (beforeStringH < self.frame.size.width) {
+        int width = (int)beforeSizeW % (int)ScreenWidth;
+        if (width < self.frame.size.width - self.font.pointSize) {
             self.marginTop         = (self.frame.size.height - sizeH)/2 + beforeStringH - font.lineHeight;
+            rect = CGRectMake(width, self.marginTop, sizeW, font.lineHeight);
         }else{
             self.marginTop         = (self.frame.size.height - sizeH)/2 + beforeStringH;
+            rect = CGRectMake(0, self.marginTop, sizeW, font.lineHeight);
         }
         
         
-        CGRect rect = CGRectMake(beforeSizeW, self.marginTop, sizeW, font.lineHeight);
+        
         
         return CGRectContainsPoint(rect, point);
     }
