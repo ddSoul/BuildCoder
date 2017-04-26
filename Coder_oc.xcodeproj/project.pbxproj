@@ -100,6 +100,7 @@
 		7B602DF11E1FA3E50041BF40 /* CoderVidieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B602DF01E1FA3E50041BF40 /* CoderVidieViewController.m */; };
 		7B602DF41E1FA4200041BF40 /* CoderNewCareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B602DF31E1FA4200041BF40 /* CoderNewCareViewController.m */; };
 		7B602DF71E1FA4D00041BF40 /* CoderSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B602DF61E1FA4D00041BF40 /* CoderSearchViewController.m */; };
+		7B9559931E519BED004C4119 /* CoderTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B9559921E519BED004C4119 /* CoderTableViewController.m */; };
 		7BF3EE821E1BA79E00514019 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF3EE811E1BA79E00514019 /* main.m */; };
 		7BF3EE8D1E1BA79E00514019 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BF3EE8C1E1BA79E00514019 /* Assets.xcassets */; };
 		7BF3EE9B1E1BA79F00514019 /* Coder_ocTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF3EE9A1E1BA79F00514019 /* Coder_ocTests.m */; };
@@ -386,6 +387,8 @@
 		7B602DF31E1FA4200041BF40 /* CoderNewCareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoderNewCareViewController.m; sourceTree = "<group>"; };
 		7B602DF51E1FA4D00041BF40 /* CoderSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoderSearchViewController.h; sourceTree = "<group>"; };
 		7B602DF61E1FA4D00041BF40 /* CoderSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoderSearchViewController.m; sourceTree = "<group>"; };
+		7B9559911E519BED004C4119 /* CoderTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoderTableViewController.h; sourceTree = "<group>"; };
+		7B9559921E519BED004C4119 /* CoderTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoderTableViewController.m; sourceTree = "<group>"; };
 		7BF3EE7D1E1BA79E00514019 /* Coder_oc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coder_oc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BF3EE811E1BA79E00514019 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7BF3EE8C1E1BA79E00514019 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -804,6 +807,8 @@
 			children = (
 				7B602DA41E1F49EC0041BF40 /* SuperViewController.h */,
 				7B602DA51E1F49EC0041BF40 /* SuperViewController.m */,
+				7B9559911E519BED004C4119 /* CoderTableViewController.h */,
+				7B9559921E519BED004C4119 /* CoderTableViewController.m */,
 			);
 			path = SuperController;
 			sourceTree = "<group>";
@@ -1807,6 +1812,7 @@
 				7BF69EED1E4B0E4F00540364 /* ShareAlertViews.m in Sources */,
 				7BF3EF851E1BAAD300514019 /* UITableView+FDKeyedHeightCache.m in Sources */,
 				7B602DB81E1F5C2C0041BF40 /* TextCell.m in Sources */,
+				7B9559931E519BED004C4119 /* CoderTableViewController.m in Sources */,
 				7BF3EF8A1E1BAAD300514019 /* MASCompositeConstraint.m in Sources */,
 				7B3FDE651E23625A00641EED /* YYTextAsyncLayer.m in Sources */,
 				7B3FDE691E23625A00641EED /* YYFPSLabel.m in Sources */,

@@ -44,7 +44,9 @@
     [self.view addSubview:self.newslist];
     
     YYFPSLabel *fpsLabel = [[YYFPSLabel alloc] initWithFrame:CGRectMake(10, 60, 80, 30)];
-    [self.view addSubview:fpsLabel];
+//    [self.view addSubview:fpsLabel];
+    
+    self.navigationItem.titleView = fpsLabel;
     
     [self.newslist addRefreshHeaderWithHandle:^{
         NSLog(@"kaishi刷新了");
@@ -88,6 +90,8 @@
         _newslist.delegate = self;
         _newslist.dataSource = self;
         _newslist.showsVerticalScrollIndicator = NO;
+//        _newslist.estimatedRowHeight = 100;
+//        _newslist.rowHeight = UITableViewAutomaticDimension;
         [_newslist registerClass:[BigImageCell class] forCellReuseIdentifier:@"bigImage"];
         [_newslist registerClass:[SmallImageCell class] forCellReuseIdentifier:@"smallImage"];
         [_newslist registerClass:[TextCell class] forCellReuseIdentifier:@"textCell"];

@@ -7,6 +7,7 @@
 //
 
 #import "CoderVidieViewController.h"
+
 #import "HomeLabelViews.h"
 #import "VedioCell.h"
 #import "VedioNews.h"
@@ -14,7 +15,6 @@
 @interface CoderVidieViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *vedioList;
-
 @property (nonatomic, strong) WMPlayer *wmPlayer;
 
 @property (nonatomic, strong) NSMutableArray *newsDataArray;
@@ -79,6 +79,7 @@
     
     __weak typeof(cell) weakCell = cell;
     __weak typeof (self) weakSelf = self;
+    
     cell.vedioPlay = ^(NSString *vedioUrl){
         [weakCell.contentView addSubview:weakSelf.wmPlayer];
         weakSelf.wmPlayer.URLString = vedioUrl;
@@ -95,8 +96,6 @@
     }
     return _newsDataArray;
 }
-
-
 
 - (WMPlayer *)wmPlayer
 {

@@ -24,7 +24,9 @@
 #import "WMPlayer.h"
 #import "UIScrollView+XLRefresh.h"
 #import "YYFPSLabel.h"
+
 #import "WKWebViewController.h"
+#import "CoderTableViewController.h"
 
 #import <BmobSDK/Bmob.h>
 
