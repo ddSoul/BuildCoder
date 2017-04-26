@@ -90,8 +90,7 @@
         _newslist.delegate = self;
         _newslist.dataSource = self;
         _newslist.showsVerticalScrollIndicator = NO;
-//        _newslist.estimatedRowHeight = 100;
-//        _newslist.rowHeight = UITableViewAutomaticDimension;
+
         [_newslist registerClass:[BigImageCell class] forCellReuseIdentifier:@"bigImage"];
         [_newslist registerClass:[SmallImageCell class] forCellReuseIdentifier:@"smallImage"];
         [_newslist registerClass:[TextCell class] forCellReuseIdentifier:@"textCell"];
@@ -99,6 +98,10 @@
     return _newslist;
 }
 
+
+/**
+ * height
+ */
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (!self.newsDataArray.count) {
