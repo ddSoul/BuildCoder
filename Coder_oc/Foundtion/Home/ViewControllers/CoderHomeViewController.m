@@ -44,7 +44,6 @@
     [self.view addSubview:self.newslist];
     
     YYFPSLabel *fpsLabel = [[YYFPSLabel alloc] initWithFrame:CGRectMake(10, 60, 80, 30)];
-//    [self.view addSubview:fpsLabel];
     
     self.navigationItem.titleView = fpsLabel;
     
