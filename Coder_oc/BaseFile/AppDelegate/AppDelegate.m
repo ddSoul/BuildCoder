@@ -22,6 +22,8 @@
     //配置第三方参数的key
     [self configeThirdKey];
     
+    //tag version1.0.1
+    
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
