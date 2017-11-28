@@ -41,7 +41,8 @@ const CGFloat SURefreshTranslatLen = 5.0;
 
 - (instancetype)init {
     if (self = [super initWithFrame:CGRectMake(0, 0, SURefreshHeaderHeight, SURefreshHeaderHeight)]) {
-        self.backgroundColor = [UIColor greenColor];
+        /*20170921修改*/
+        self.backgroundColor = [UIColor clearColor];
         [self initLayers];
     }
     return self;

@@ -14,7 +14,6 @@
 @interface BigImageCell : UITableViewCell
 
 @property (nonatomic, strong) News *model;
-
 @property (nonatomic, strong) CellFooterViews *footerViews;
 
 @end

@@ -13,9 +13,6 @@
 @interface BigImageCell ()
 
 @property (nonatomic, strong) UILabel *label;
-
-//@property (nonatomic, strong) CellFooterViews *footerViews;
-
 @property (nonatomic, strong) UIImageView *bigImageView;
 
 @end
@@ -50,6 +47,8 @@
     self.label.font = [UIFont systemFontOfSize:14];
     [self.contentView addSubview:self.label];
     
+    self.label.preferredMaxLayoutWidth = ScreenWidth - 10;
+    
     [self.label mas_makeConstraints:^(MASConstraintMaker *make){
         make.left.top.mas_equalTo(5);
         make.right.mas_equalTo(-5);
@@ -70,13 +69,13 @@
     self.footerViews = [[CellFooterViews alloc] init];
     self.footerViews.backgroundColor = [UIColor whiteColor];
     [self.contentView addSubview:self.footerViews];
-    
-    
+//
+//
     [self.footerViews mas_makeConstraints:^(MASConstraintMaker *make){
 
         make.left.right.bottom.mas_equalTo(0);
         make.top.mas_equalTo(_bigImageView.mas_bottom).offset(0);
-        
+
     }];
 }
 

@@ -13,7 +13,6 @@
 @interface TextCell ()
 
 @property (nonatomic, strong) UILabel *label;
-
 @property (nonatomic, strong) CellFooterViews *footerViews;
 
 @end
@@ -47,6 +46,8 @@
     self.label.font = [UIFont systemFontOfSize:14];
     [self.contentView addSubview:self.label];
     
+    self.label.preferredMaxLayoutWidth = ScreenWidth - 10;
+    
     [self.label mas_makeConstraints:^(MASConstraintMaker *make){
         make.left.top.mas_equalTo(5);
         make.right.mas_equalTo(-5);
@@ -55,19 +56,18 @@
     self.footerViews = [[CellFooterViews alloc] init];
     self.footerViews.backgroundColor = [UIColor whiteColor];
     [self.contentView addSubview:self.footerViews];
-    
-    
+//
+//
     [self.footerViews mas_makeConstraints:^(MASConstraintMaker *make){
-        
+
         make.left.right.bottom.mas_equalTo(0);
         make.top.mas_equalTo(_label.mas_bottom).offset(0);
-        
+
     }];
 
 }
 
-- (void)setModel:(News *)model
-{
+- (void)setModel:(News *)model {
     self.label.text = model.title;
     self.footerViews.fmodel = model.typeinfo;
 }

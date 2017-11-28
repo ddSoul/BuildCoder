@@ -13,13 +13,9 @@
 @interface SmallImageCell ()
 
 @property (nonatomic, strong) UILabel *label;
-
 @property (nonatomic, strong) CellFooterViews *footerViews;
-
 @property (nonatomic, strong) UIImageView *leftImage;
-
 @property (nonatomic, strong) UIImageView *centerImage;
-
 @property (nonatomic, strong) UIImageView *rightImage;
 
 @end
@@ -53,6 +49,8 @@
     self.label.numberOfLines = 5;
     self.label.font = [UIFont systemFontOfSize:14];
     [self.contentView addSubview:self.label];
+    
+    self.label.preferredMaxLayoutWidth = ScreenWidth - 10;
     
     [self.label mas_makeConstraints:^(MASConstraintMaker *make){
         make.left.top.mas_equalTo(5);
@@ -98,16 +96,15 @@
     
     
     [self.footerViews mas_makeConstraints:^(MASConstraintMaker *make){
-        
+
         make.left.right.bottom.mas_equalTo(0);
         make.top.mas_equalTo(_leftImage.mas_bottom).offset(0);
-        
+
     }];
 
 }
 
-- (void)setModel:(News *)model
-{
+- (void)setModel:(News *)model {
     self.label.text = model.title;
     [self.leftImage sd_setImageWithURL:[NSURL URLWithString:model.imageArray[0]]];
     [self.centerImage sd_setImageWithURL:[NSURL URLWithString:model.imageArray[1]]];

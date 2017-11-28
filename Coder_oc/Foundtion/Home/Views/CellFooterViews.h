@@ -10,13 +10,11 @@
 
 typedef void (^ShareButton) (UIButton *button);
 
-
 @class FootModel;
 
 @interface CellFooterViews : UIView
 
 @property (nonatomic, strong) FootModel *fmodel;
-
 @property (nonatomic, copy) ShareButton shareButtonClick;
 
 @end

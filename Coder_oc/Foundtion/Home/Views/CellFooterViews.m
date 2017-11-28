@@ -13,13 +13,9 @@
 
 //新闻类型标签
 @property (nonatomic, strong) UILabel *newsTypeLabel;
-
 @property (nonatomic, strong) UILabel *writer;
-
 @property (nonatomic, strong) UILabel *commentCount;
-
 @property (nonatomic, strong) UILabel *time;
-
 /**
  评论按钮
  */
