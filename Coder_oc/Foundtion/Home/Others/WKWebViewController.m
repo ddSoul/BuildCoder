@@ -25,15 +25,16 @@
     // Do any additional setup after loading the view.
 }
 
-+ (void)load
-{
-    NSLog(@"________Load函数");
-}
+//+ (void)load
+//{
+//    NSLog(@"________Load函数");
+//}
 
 - (void)configeUI
 {
     self.title = @"web";
     self.view.backgroundColor = [UIColor whiteColor];
+    self.navigationController.navigationBarHidden = YES;
     
     _wkWebView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight)];
     [self.view addSubview:_wkWebView];
@@ -45,7 +46,10 @@
                      forKeyPath:@"estimatedProgress"
                         options:NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew
                         context:nil];
-    [self.wkWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.baidu.com"]]];
+    [self.wkWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.e-yifuli.com/"]]];
+    
+    
+//    [[self.wkWebView configuration].userContentController addScriptMessageHandler:self name:@"对象名"];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
@@ -68,6 +72,13 @@
     }
 }
 
+
+#pragma mark - WKScriptMessageHandler
+- (void)userContentController:(WKUserContentController *)userContentController
+      didReceiveScriptMessage:(WKScriptMessage *)message
+{
+    NSLog(@"<JS调用了 %@ 方法,参数:%@>", message.name, message.body);
+}
 - (void)dealloc {
     [_wkWebView removeObserver:self forKeyPath:@"estimatedProgress"];
     
