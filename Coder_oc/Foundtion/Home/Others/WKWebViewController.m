@@ -22,6 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self configeUI];
+    /** 20180306*/
     // Do any additional setup after loading the view.
 }
 
