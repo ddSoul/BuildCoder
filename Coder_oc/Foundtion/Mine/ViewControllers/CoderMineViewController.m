@@ -29,6 +29,7 @@
 
 - (void)initUI
 {
+    //git stash test
     self.title = @"个人中心";
     self.navigationController.navigationBar.hidden = YES;
     

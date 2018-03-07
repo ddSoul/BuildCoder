@@ -25,6 +25,7 @@
     //tag version1.0.1
     //tag version2.0.0
     //commit 20171130
+    //git stash 1
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
